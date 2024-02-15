@@ -10,7 +10,13 @@ function summ(firstNumberSumm, secondNumberSumm){
     console.log(`Summ ${firstNumberSumm} + ${secondNumberSumm} = ${firstNumberSumm+secondNumberSumm}`);
 }
 
-function divide(firstNumberDivide, secondNumberDivide){
+function divide(firstNumberDivide, secondNumberDivide) {
+    if (userSecondNumber == 0) {
+        alert('0 is not correct number');
+    }
+    else {
+        return userFirstNumber / userSecondNumber;
+    }
     console.log(`Divide ${firstNumberDivide} / ${secondNumberDivide} = ${firstNumberDivide/secondNumberDivide}`);
 }
 
@@ -78,18 +84,26 @@ function table(i) {
     console.log(`5*${i}=${5 * i}`)
     return 5*i
 }
-table(i = 5)
-table(i = 8)
+table(5)
+table(8)
 
 
-let a = Number(prompt('write number'));
-function table(a, i) {
-        for (let i = 1; i <= 10; i++) {
-        console.log(`${a}*${i}=${a * i}`);
+// let a = Number(prompt('write number'));
+// function table(a, i) {
+//         for (let i = 1; i <= 10; i++) {
+//         console.log(`${a}*${i}=${a * i}`);
+//     }
+//     }
+// table(a)
+
+let userNumber= Number(prompt('write number'));
+function table(userNumber, iteration) {
+        for (let i = 1; i < iteration; i++) {
+        console.log(`${userNumber}*${i}=${userNumber * i}`);
     }
     }
 
-    table(a)
+    table(5, 4)
 
 //----------------------------------------------------------------
 //Task #6
