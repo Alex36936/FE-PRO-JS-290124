@@ -84,14 +84,17 @@ console.log(newshiftArr);
 //Створіть функцію wellcomUser, яка приймає масив і функцію-колбек hiUser яка виводить в console ('Вітаю ${user}'), 
 //і викликає цю функцію для кожного елемента масиву.
 let userArr = ['Tom', 'Karl', 'Kalvin'];
-function hiUser(user) {
-    for (i = 0; i < userArr.length; i++);
+let user = prompt("Write your name");
+function hiUser() {
      console.log(`Вітаю ${user}`)
  }
 function wellcomUser() {
+    for (i = 0; i < userArr.length; i++);
+    console.log(userArr[i]);
+    hiUser();
 }
-hiUser(userArr);
-console.log(user);
+wellcomUser();
+//---------------------------------------------------
  //Додаткова робота:
     //Створіть новий массив за допомогою методів розглянутих на уроці в якому видалені всі значення "Remove" з масиву -
     //["Keep", "Remove", "Keep", "Remove", "Keep", "Keep", "Remove", "Remove"] в результаті повинен бути ось такий новий
