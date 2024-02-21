@@ -27,7 +27,7 @@ console.log(newfreeArr);
 let fullArr = ['number', 'fruit', 34, 45, 'name'];
 console.log(fullArr);
 console.log(fullArr.length);
-fullArr.pop(4);
+fullArr.pop();
 console.log(fullArr);
 
 //--------------------------------
@@ -35,7 +35,7 @@ console.log(fullArr);
 let popArr = [];
 let newpopArr = [67, 78, 29, 45];
 function emptyArrey (array){
-  array.pop('hard numbers');
+  array.pop();
 }
 emptyArrey(newpopArr);
 console.log(newpopArr);
@@ -67,7 +67,7 @@ console.log(newunshiftArr);
 let newTask = ['room', 'appartment', 'house', 'building'];
 console.log(newTask);
 
-newTask.shift('new item');
+newTask.shift();
 console.log(newTask);
 
 //--------------------------------
@@ -75,7 +75,7 @@ console.log(newTask);
 let counrtyArr = [];
 let newshiftArr = ['Ireland','Austria','Hungary'];
 function emptyArrey (array){
-  array.shift('Germany');
+  array.shift();
 }
 emptyArrey(newshiftArr);
 console.log(newshiftArr);
@@ -85,15 +85,15 @@ console.log(newshiftArr);
 //і викликає цю функцію для кожного елемента масиву.
 let userArr = ['Tom', 'Karl', 'Kalvin'];
 let user = prompt("Write your name");
-function hiUser() {
+function hiUser(user) {
      console.log(`Вітаю ${user}`)
  }
-function wellcomUser() {
+function wellcomUser(callback) {
     for (i = 0; i < userArr.length; i++);
     console.log(userArr[i]);
-    hiUser();
+    callback(userArr[i]);
 }
-wellcomUser();
+wellcomUser(hiUser);
 //---------------------------------------------------
  //Додаткова робота:
     //Створіть новий массив за допомогою методів розглянутих на уроці в якому видалені всі значення "Remove" з масиву -
