@@ -40,6 +40,7 @@ console.log(numbers);
 
 //Task #5------------------------------------------
 
+
 let floatNumber = [15.8, 4.3, 22.9, 3.5];
 let simpleArrr = floatNumber.map(Math.round);
 console.log(simpleArrr);
