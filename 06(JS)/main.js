@@ -36,7 +36,6 @@ const numbers = [1, 2, 3, 4, 5];
 numbers.forEach(function (item) {
     numbers.reverse(item);    
 })
-
 console.log(numbers);
 
 //Task #5------------------------------------------
