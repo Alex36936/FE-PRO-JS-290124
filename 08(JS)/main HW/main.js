@@ -52,14 +52,16 @@ for (let books of booksArray) {
         { name: 'Послуги', url: '/services' }];
     
     let parent = document.querySelector('#header');
+    let ul = document.createElement('ul');
     for (let elem of menuData) {
-        let ul = document.createElement('ul');
+        // let ul = document.createElement('ul');
         let li = document.createElement('li');
-        li.textContent = elem.name;
+        // li.textContent = elem.name;
+        li.innerHTML = `<li><a href='${elem.url}'>${elem.name}</a></li>`;
         ul.appendChild(li);
-
-        parent.appendChild(ul);
     }
+        parent.appendChild(ul);
+    
     
     parent.setAttribute('style', 'background-color:yellow');
     parent.style.padding = '50px';
