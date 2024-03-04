@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="events.js"></script>
+    <style>
+        .addsize{
+            background: rgb(153, 255, 177);
+            border-radius: 1em;
+            display: inline-block;
+            padding: 1em;
+            transform: scale(0.9);
+            transform-origin: 0 0;
+            transition: transform 0.6s;
+            user-select: none;
+        }
+        .large {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    
+<!-- 1. onclick
+Задача: Створіть кнопку та елемент Р з текстом,при кліку на кнопку 
+текст змінює колір. Можете використати функцію яка
+генерує різний колір -->
+<div>
+    <p class="name">Click here</p>
+    <button onclick="changeColor()">Push this button!</button>
+</div>
+<script> 
+let name = document.querySelector('.name');
+    function changeColor() {
+        name.style.color = 'pink';
+        changeColor();
+    }
+</script>
+
+<!-- 2. ondblclick
+Задача: Створіть елемент, який при подвійному кліку збільшує 
+свій розмір в 2 рази ( змінюємо width i height). -->
+
+<div class="addsize">
+    <p>click for make bigger size</p>
+</div>
+
+
+<!-- 3. addEventListener і removeEventListener
+
+Створити кнопку і текстовий елемент в якому розмість лічільник: 
+0,при кліку на кнопку в текстовому значенні повино
+збільшуватись значення на 1. Коли значення лічильника перевищує 10,
+ кнопка перестає реагувати на кліки. -->
+<div>
+<button class="listner">
+    Listener for your button pushed
+</button>
+<p class="pEl">Counter</p>
+</div>
+
+
+</body>
+</html>
