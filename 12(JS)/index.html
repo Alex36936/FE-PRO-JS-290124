@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <style>
+        .text{
+            text-align: center;
+            color: rgba(159, 47, 47,0.5);
+        }
+        .color{
+            display: flex;
+            justify-content: center;
+        }
+        .hobby{
+            text-align: center;
+            color: rgba(88, 102, 6, 0.5);
+        }
+        p{
+            border: 3px solid black;
+            width: 100px;
+            height: 150px;
+            flex-wrap: wrap;
+        }
+        .select-hobbyes{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .select-coutries{
+             display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        #countryInfo{
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Форма з вибором улюбленого кольору:
+    Створіть форму з декількома радіокнопками, кожна з яких представляє різний колір (наприклад, червоний, зелений, синій).
+    Використовуйте подію onchange для кожної радіокнопки, щоб змінювати колір фону сторінки відповідно до вибору
+    користувача. -->
+<div class="text"><h2>Виберіть колір:</h2></div>
+    
+<div class="color">
+    <form id="changeColor">
+        <input type="radio" id="pink" name="color" value="pink" class="color-option">
+        <label for="pink">Pink</label>
+        <input type="radio" id="aquamarine" name="color" value="aquamarine" class="color-option">
+        <label for="aquamarine">Aquamarine</label>
+        <input type="radio" id="violet" name="color" value="violet" class="color-option">
+        <label for="violet">Violet</label>
+    </form>
+</div>
+    
+
+
+    <!-- Форма для вибору хобі з чекбоксами:
+    Створіть чекбокси для різних хобі (наприклад, читання, спорт, музика).
+    Встановіть обробник події onchange для кожного чекбоксу,
+     щоб відображати список вибраних хобі у текстовому елементі під
+    формою. -->
+    <div class="select-hobbyes">
+        <div class="hobby">
+            <h2>Оберіть ваші хоббі</h2>
+        </div>
+        <form id="hobbiesForm">
+            <label><input type="checkbox" name="hobby" value="dance" onchange="updateHobbiesList()"> Танці</label><br>
+            <label><input type="checkbox" name="hobby" value="reading" onchange="updateHobbiesList()"> Читання</label><br>
+            <label><input type="checkbox" name="hobby" value="travel" onchange="updateHobbiesList()"> Подорожі</label><br>
+            <label><input type="checkbox" name="hobby" value="sports" onchange="updateHobbiesList()"> Спорт</label><br>
+            <label><input type="checkbox" name="hobby" value="music" onchange="updateHobbiesList()"> Музика</label><br>
+            <label><input type="checkbox" name="hobby" value="swimming" onchange="updateHobbiesList()"> Плавання</label><br>
+        </form>
+        <p>Вибрані хобі: <span id="selectedHobbies"></span></p>
+    </div>
+   
+
+    <script>
+         function updateHobbiesList() {
+                var selectedHobbies = document.querySelectorAll('input[name="hobby"]:checked');
+                var hobbiesList = "";
+                for (var i = 0; i < selectedHobbies.length; i++) {
+                    hobbiesList += selectedHobbies[i].value;
+                    if (i < selectedHobbies.length - 1) {
+                        hobbiesList += ", ";
+                    }
+                }
+                document.getElementById("selectedHobbies").textContent = hobbiesList;
+            }
+    </script>
+
+
+    <!-- Форма з вибором країни із випадаючого списку:
+    Створіть випадаючий список з назвами країн.
+    Використовуйте подію onchange для випадаючого списку,
+    щоб виводити інформацію про вибрану країну, таку як столиця або
+    населення, в іншому елементі на сторінці.
+    Форма для оцінювання якості обслуговування: -->
+<div class="select-coutries">
+<form>
+    <label for="countries">Виберіть країну:</label>
+    <select id="countries" onchange="showCountryInfo()">
+        <option value="">Оберіть країну</option>
+        <option value="ukraine">Україна</option>
+        <option value="usa">США</option>
+        <option value="germany">Німеччина</option>
+        <option value="france">Франція</option>
+        <option value="japan">Японія</option>
+    </select>
+</form>
+
+<div id="countryInfo"></div>
+</div>
+
+<script>
+    function showCountryInfo() {
+        let select = document.getElementById("countries");
+        let selectedCountry = select.options[select.selectedIndex].value;
+        let countryInfoDiv = document.getElementById("countryInfo");
+        let countryInfo = "";
+
+        switch (selectedCountry) {
+            case "ukraine":
+                countryInfo = "Столиця: Київ, Населення: приблизно 41 мільйон осіб.";
+                break;
+            case "usa":
+                countryInfo = "Столиця: Вашингтон, Населення: приблизно 331 мільйон осіб.";
+                break;
+            case "germany":
+                countryInfo = "Столиця: Берлін, Населення: приблизно 83 мільйони осіб.";
+                break;
+            case "france":
+                countryInfo = "Столиця: Париж, Населення: приблизно 67 мільйонів осіб.";
+                break;
+            case "japan":
+                countryInfo = "Столиця: Токіо, Населення: приблизно 126 мільйонів осіб.";
+                break;
+            default:
+                countryInfo = "Будь ласка, оберіть країну.";
+        }
+
+        countryInfoDiv.textContent = countryInfo;
+    }
+    </script>
+
+</body>
+</html>
