@@ -39,3 +39,59 @@ const images = ['images/Tiger1.jpeg','images/Tiger2.jpeg','images/Tiger3.jpeg','
     });
 }
 
+//Task -----------------------------------------------------------
+
+function removeElementFromArray(array, elementToRemove) {
+    let newArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] !== elementToRemove) {
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+let initialArray = [1, 2, 3, 4, 5];
+let elementToRemove = 3;
+let modifiedArray = removeElementFromArray(initialArray, elementToRemove);
+console.log(modifiedArray);
+
+//Task -----------------------------------------------------------
+
+function mergeArrays(array1, array2) {
+    let mergedArray = array1.concat(array2);
+
+    let uniqueElementsMap = {};
+    mergedArray.forEach(function(element) {
+        uniqueElementsMap[element] = true;
+    });
+    return Object.keys(uniqueElementsMap);
+}
+let array1 = [1, 2, 3, 8, 45, 100];
+let array2 = [2, 3, 4, 5, 25, 100];
+let mergedUniqueArray = mergeArrays(array1, array2);
+console.log(mergedUniqueArray);
+
+//Task -----------------------------------------------------------
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let result = separateEvenAndOddNumbers(numbers);
+console.log(result.even);
+console.log(result.odd);
+function separateEvenAndOddNumbers(numbersArray) {
+    let evenNumbers = [];
+    let oddNumbers = [];
+
+    for (let i = 0; i < numbersArray.length; i++) {
+        let number = numbersArray[i];
+        if (number % 2 === 0) {
+            evenNumbers.push(number);
+        } else {
+            oddNumbers.push(number);
+        }
+    }
+   return {
+        even: evenNumbers,
+        odd: oddNumbers
+    };
+}
