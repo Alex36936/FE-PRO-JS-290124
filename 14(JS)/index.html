@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="main.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+div{
+    margin: 10px auto;
+}
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    padding-right: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    min-width: 95%;
+    padding: 10px;
+    border: 2px solid rgba(70, 15, 187,0.3);
+    border-radius: 5px;
+}
+input:hover{
+    background-color: rgb(196, 236, 236);
+}
+input[type="submit"] {
+    background-color: #163da0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0b0356;
+}
+
+.error {
+    color: red;
+}
+button:hover{
+    background-color: rgba(31, 167, 230, 0.5);
+}
+button{
+    margin: 10px auto;
+    width: 150px;
+    height: 50px;
+}
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+<div class="register-form-group">
+<form id="registrationForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <small>Format: +38 123 456 7890</small>
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+
+    <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <span id="passwordMatch" class="error"></span>
+    </div>
+
+    <button type="submit" id="submitButton" disabled>Submit</button>
+</form>
+</div>
+
+
+
+</body>
+</html>
