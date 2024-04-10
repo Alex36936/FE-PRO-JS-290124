@@ -19,6 +19,21 @@ saveButton.addEventListener('click', function() {
 function fetchSWAPI() {
   fetch('https://swapi.dev/api/planets/1/')
     .then(response => response.json())
+    .then(data => {
+      let name = data.name;
+      let climate = data.climate;
+      let terrain = data.terrain;
+      let url = data.url;
+      let cardHTML = `
+        <div>
+          <h2>${name}</h2>
+          <p><strong>Climate:</strong> ${climate}</p>
+          <p><strong>Terrain:</strong> ${terrain}</p>
+          <p><strong>URL:</strong> <a href="${url}" target="_blank">${url}</a></p>
+        </div>
+      `;
+      swapiCard.innerHTML = cardHTML;
+    })
     .catch(error => {
       console.error('Error fetching data:', error);
       swapiCard.innerHTML = '<p>Error fetching data from SWAPI</p>';
